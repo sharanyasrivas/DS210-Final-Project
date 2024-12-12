@@ -4,7 +4,6 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufRead};
 
-/// Struct to represent a social graph.
 pub struct SocialGraph {
     pub graph: Graph<(), (), Undirected>, // The graph itself
     pub node_map: HashMap<String, NodeIndex>, // Maps node names to NodeIndex
