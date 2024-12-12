@@ -4,7 +4,7 @@ mod utility;
 use graph::SocialGraph;
 
 fn main() {
-    // Use `SocialGraph::load_graph` to call the associated function
+   
     let graph = match SocialGraph::load_graph("twitter_combined.txt") {
         Ok(g) => g,
         Err(e) => {
