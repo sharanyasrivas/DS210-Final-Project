@@ -5,7 +5,7 @@ use std::fs::File;
 use std::io::{self, BufRead};
 
 pub struct SocialGraph {
-    pub graph: Graph<(), (), Undirected>, // The graph itself
+    pub graph: Graph<(), (), Undirected>,
     pub node_map: HashMap<String, NodeIndex>, // Maps node names to NodeIndex
 }
 
