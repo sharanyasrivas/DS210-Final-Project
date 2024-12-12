@@ -1,0 +1,9 @@
+[package]
+name = "DS_project_210"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+petgraph = "0.6"  # Petgraph crate for graph handling
+
+[dev-dependencies]
