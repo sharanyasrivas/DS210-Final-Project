@@ -6,7 +6,7 @@ use std::io::{self, BufRead};
 
 pub struct SocialGraph {
     pub graph: Graph<(), (), Undirected>,
-    pub node_map: HashMap<String, NodeIndex>, // Maps node names to NodeIndex
+    pub node_map: HashMap<String, NodeIndex>, 
 }
 
 impl SocialGraph {
