@@ -19,7 +19,7 @@ fn main() {
         graph.graph.edge_count()
     );
 
-    // Example: Use a utility function if needed
+   
     utility::example_utility_function();
 }
 
@@ -50,7 +50,7 @@ fn get_user_input() -> (String, String) {
 }
 
 fn run_program() -> io::Result<()> {
-    // Use `SocialGraph::load_graph` to call the associated function
+ 
     let graph = match SocialGraph::load_graph("twitter_combined.txt") {
         Ok(g) => g,
         Err(e) => {
@@ -65,10 +65,10 @@ fn run_program() -> io::Result<()> {
         graph.graph.edge_count()
     );
 
-    // Example: Use a utility function if needed
+   
     utility::example_utility_function();
 
-    // Optionally call other methods on the `SocialGraph` object
+  
     graph.find_extreme_similarity();
 
     Ok(())
