@@ -5,7 +5,7 @@ use graph::SocialGraph;
 
 fn main() {
    
-    let graph = match SocialGraph::load_graph("twitter_combined.txt") {
+    let graph = match SocialGraph::load_graph("twitter_combined copy.txt") {
         Ok(g) => g,
         Err(e) => {
             eprintln!("Error loading graph: {}", e);
