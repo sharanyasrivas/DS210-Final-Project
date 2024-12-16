@@ -51,7 +51,7 @@ fn get_user_input() -> (String, String) {
 
 fn run_program() -> io::Result<()> {
  
-    let graph = match SocialGraph::load_graph("twitter_combined.txt") {
+    let graph = match SocialGraph::load_graph("twitter_combined copy.txt") {
         Ok(g) => g,
         Err(e) => {
             eprintln!("Error loading graph: {}", e);
