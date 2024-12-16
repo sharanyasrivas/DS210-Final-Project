@@ -4,9 +4,10 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{self, BufRead};
 
+/// Struct to represent a social graph.
 pub struct SocialGraph {
-    pub graph: Graph<(), (), Undirected>,
-    pub node_map: HashMap<String, NodeIndex>, 
+    pub graph: Graph<(), (), Undirected>, // The graph itself
+    pub node_map: HashMap<String, NodeIndex>, // Maps node names to NodeIndex
 }
 
 impl SocialGraph {
@@ -71,10 +72,25 @@ impl SocialGraph {
         );
     }
 
-    // Assuming `calculate_similarity` method is implemented for the struct
-    fn calculate_similarity(&self, node1: NodeIndex, node2: NodeIndex) -> f64 {
-        // Placeholder for your similarity calculation logic
-        0.5 // Example similarity, replace with real calculation
+    /// Calculate similarity between two nodes based on common neighbors.
+    pub fn calculate_similarity(&self, node1: NodeIndex, node2: NodeIndex) -> f64 {
+        let neighbors1: Vec<NodeIndex> = self.graph.neighbors(node1).collect();
+        let neighbors2: Vec<NodeIndex> = self.graph.neighbors(node2).collect();
+
+        // Calculate the intersection of the two neighbor lists
+        let common_neighbors: Vec<NodeIndex> = neighbors1
+            .iter()
+            .filter(|&&n| neighbors2.contains(&n))
+            .copied()
+            .collect();
+
+        // Return similarity as the number of common neighbors divided by the total number of unique neighbors
+        let total_neighbors = neighbors1.len() + neighbors2.len() - common_neighbors.len();
+        if total_neighbors == 0 {
+            return 0.0; // No similarity if there are no neighbors
+        }
+
+        common_neighbors.len() as f64 / total_neighbors as f64
     }
 }
 
