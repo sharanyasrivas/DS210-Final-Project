@@ -6,7 +6,7 @@ use petgraph::graph::NodeIndex;
 
 fn main() {
     // Use `SocialGraph::load_graph` to call the associated function
-    let graph = match SocialGraph::load_graph("twitter_combined.txt") {
+    let graph = match SocialGraph::load_graph("twitter_combined copy.txt") {
         Ok(g) => g,
         Err(e) => {
             eprintln!("Error loading graph: {}", e);
