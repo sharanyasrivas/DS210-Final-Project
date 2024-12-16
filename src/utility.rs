@@ -1,6 +1,6 @@
 use std::io::BufRead;
 
-
+/// Example utility function.
 pub fn example_utility_function() {
     println!("This is an example utility function.");
 }
